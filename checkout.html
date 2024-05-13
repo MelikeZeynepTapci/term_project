@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+
+        .container {
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #table_header{
+            text-align: center;
+            font-weight: bold;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        #firsttb{
+            width: 50%;
+            background-color: rgb(244, 244, 236);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 8px 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4766c3;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #314989;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body style="color: rgb(71, 102, 195);">
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="login.html">Login</a>
+        <a href="checkout.html">My Shopping Cart</a>
+        <img src="images/shopping-cart.png" alt="" width="40" style="margin-top: 5px; ">
+      </div>
+    <div align="center">
+        <form id="form1" name="form1"></form>
+        <table id="firsttb" border="1">
+            <tr>
+                <td align="center">
+                    <form name="form2">
+                        <table border="1" cellpadding="15">
+                            <tr>
+                                <td colspan="3" id="table_header">Receiver Informations</td>
+                            </tr>
+
+                            <tr>
+                                <td align="center">
+                                    <label for="cur">Name</label>
+
+                                </td>
+                                <td id="name_section">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="center">
+                                    <label for="bs">Orders</label>
+
+                                </td>
+
+                                <td>
+                                    <div id="table-container"></div>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="center">
+                                    <label for="street-address">Street Address</label>
+
+                                </td>
+                                <td><input type="text" id="street-address" name="street-address"
+                                        autocomplete="street-address" required enterkeyhint="next"></input></td>
+                            </tr>
+
+                            <tr>
+                                <td align="center">
+                                    <label for="postal-code">ZIP or Postal Code (optional)</label>
+
+
+                                </td>
+                                <td><input class="postal-code" id="postal-code" name="postal-code"
+                                        autocomplete="postal-code" enterkeyhint="next"></td>
+
+                            </tr>
+
+                            <tr>
+                                <td align="center">
+                                    <label for="city">City</label>
+
+
+                                </td>
+                                <td><input required type="text" id="city" name="city" autocomplete="address-level2"
+                                        enterkeyhint="next"></td>
+
+                            </tr>
+
+                            <tr>
+                                <td align="center">
+                                    <label for="country">Country or Region</label>
+
+                                </td>
+                                <td><input required type="text" id="country" name="city" autocomplete="address-level2"
+                                        enterkeyhint="next"></td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td><label for="country">Total Price    </label></td>
+                                <td id="total_price"></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td><button type="button" onclick="myFunction()">PAY</button></td>
+                            </tr>
+
+
+                        </table>
+        </table>
+        </form>
+        </td>
+        </tr>
+
+
+    </div>
+
+    <footer>
+        <small>
+          2024 Spring Semester - ENGR 372 - 
+        </small>
+        <small>
+            Melike Z. Tapcı, Resul Erdem Arduç, Ege Eylül Kırmızı.....FILL THESE 
+        </small>
+      </footer>
+
+
+    <script>
+
+        var name = "Name of customer from session key"
+        document.getElementById("name_section").innerHTML = name;
+
+        var kurslar = ["Orders are From Database", "HipHop Dancing", "English Reading"];
+        var adetler = [9, 1, 2];
+        var fiyatlar = [0, 120, 200];
+
+
+        var tableHTML = "<table border='1' cellpadding='10' cellspacing='10'>";
+        tableHTML += "<tr><th>Course</th><th>Amount</th><th>Price</th></tr>";
+
+        for (var i = 0; i < kurslar.length; i++) {
+            tableHTML += "<tr>";
+            tableHTML += "<td>" + kurslar[i] + "</td>";
+            tableHTML += "<td>" + adetler[i] + "</td>";
+            tableHTML += "<td>" + fiyatlar[i] + " TL</td>";
+            tableHTML += "</tr>";
+        }
+
+        tableHTML += "</table>";
+
+        document.getElementById("table-container").innerHTML = tableHTML;
+
+
+        var toplamFiyat = fiyatlar.reduce((acc, curr) => acc + curr, 0);
+        document.getElementById("total_price").innerHTML = toplamFiyat + " TL";
+
+        function myFunction() {
+            var streetAddress = document.getElementById("street-address").value.trim();
+            var city = document.getElementById("city").value.trim();
+            var country = document.getElementById("country").value.trim();
+
+            if (streetAddress === "" || city === "" || country === "") {
+                alert("Please fill in all required fields (Street Address, City, Country/Region).");
+                return;
+            }
+
+            alert("Paid");
+        }
+    </script>
+
+
+
+</body>
+
+</html>
