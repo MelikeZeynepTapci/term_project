@@ -1,6 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: hsl(0, 0%, 98%);
+  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(90deg, #ede1fff5, #ffffff);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    letter-spacing: 2px;
+    font-size: 12px;
+  
     
 
 }
