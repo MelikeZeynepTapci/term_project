@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Invalid request method.";
 }
 
-
+return "<html><head><title>Message Sent</title></head><body><h1>Message Sent</h1></body></html>"
 
 
 ?>
