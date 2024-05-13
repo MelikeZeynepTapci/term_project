@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .cart-container {
+        width: 80%;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #f9f9f9;
+      }
+      .remove-btn {
+        color: red;
+        cursor: pointer;
+      }
+      .cart-summary {
+        text-align: right;
+        margin-top: 20px;
+      }
+      .total-price {
+        color: green;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .checkout-btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+        margin-top: 20px;
+        cursor: pointer;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cart-container">
+      <h1>Shopping Cart</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Product Row -->
+          <tr>
+            <td>Example Product 1</td>
+            <td>2</td>
+            <td>$15.00</td>
+            <td class="item-total">$30.00</td>
+            <td><i class="fas fa-trash remove-btn"></i></td>
+          </tr>
+          <!-- Another Product Row -->
+          <tr>
+            <td>Example Product 2</td>
+            <td>1</td>
+            <td>$25.00</td>
+            <td class="item-total">$25.00</td>
+            <td><i class="fas fa-trash remove-btn"></i></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cart-summary">
+        <span class="total-price">Total: $55.00</span>
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".remove-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          const row = this.closest("tr");
+          const totalCell = row.querySelector(".item-total").innerText;
+          const totalValue = parseFloat(totalCell.replace("$", ""));
+          updateTotal(-totalValue);
+          row.remove(); // Removes the item row from the table
+        });
+      });
+
+      function updateTotal(amount) {
+        const totalSpan = document.querySelector(".total-price");
+        let currentTotal = parseFloat(
+          totalSpan.innerText.replace("Total: $", "")
+        );
+        currentTotal += amount;
+        totalSpan.innerText = `Total: $${currentTotal.toFixed(2)}`;
+      }
+    </script>
+  </body>
+</html>
