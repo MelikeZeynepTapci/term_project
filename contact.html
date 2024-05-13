@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>   
+
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto; /* Center the container */
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        label, input, select, textarea {
+            
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            
+            font-size: large;
+            
+            text-align: center;
+            color:white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+        input[type="submit"]:hover {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="#news">Courses</a>
+        
+           <img src="images/shopping-cart.png" alt="" width="40" style="margin-top: 5px; ">
+       
+        
+        <a href="contact.html">Contact</a>
+        <a href="#about">About Us</a>
+        <span style="width: 200px;"></span>
+        <a href="#news">My Shopping Cart</a>
+      </div>
+
+<h1>Contact Us</h1>
+<h3>Write a message you'd like us to receive from you.</h3>
+<br>
+<hr>
+
+<div class="container" style="margin-top: 2%;">
+    <form action="send_message.php" method="POST">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fullname" placeholder="Your full name">
+  
+        <label for="lname">Email Address</label>
+        <input type="text" id="email" name="email" placeholder="Your email address">
+  
+        <label for="subject">Subject</label>
+        <select id="subject" name="subject">
+            <option value="feedback">Feedback</option>
+            <option value="complaint">Complaint</option>
+            <option value="question">Question</option>
+        </select>
+  
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+  
+        <input type="submit" value="Submit" style="background-color: #75ba97;">
+    </form>
+</div>
+
+<footer>
+    <small>
+      2024 Spring Semester - ENGR 372 - 
+    </small>
+    <small>
+        Melike Z. Tapcı, Resul Erdem Arduç, Ege Eylül Kırmızı.....FILL THESE 
+    </small>
+  </footer>
+
+</body>
+</html>
