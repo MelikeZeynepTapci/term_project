@@ -30,143 +30,22 @@ $mysqli->close();
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title> Courses </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='coursesGall_styles.css'>
     <script src='main.js'></script>
 </head>
-<style>
     
-    body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(90deg, #0d349b, #e99bc1);
-    background-repeat: no-repeat;
-    background-size: cover;
-    letter-spacing: 1px;
-    font-size: 14px;
-    }
-    .container{
-        background-color: #F5F5F5;
-        margin: 5%;
-        border: solid 1px rgb(15, 21, 73);
-        padding: 5%;
-    }
-    ul{
-        margin-top: 5%;
-        margin-bottom: 5%;
-        font-size: 16px;
-
-    }
-    li{
-        display: inline;
-        padding-right: 5%;
-        
-    }
-    li a{
-        text-decoration: none;
-        color: #0d349b;
-        border-radius: 25px;
-       
-
-    }
-    .choosen{
-        border: #0d349b 1px solid;
-        padding: 10px;
-    }
-    li a:hover{
-        color: #EC9BBE;
-        border: #EC9BBE 1px solid;
-        padding: 10px;
-
-    }
-    td, tr{
-        border: #0d349b solid 0px;
-        padding: 10px;
-        margin: 10px;
-    }
-
-    td{
-        width: 33%;
-    }
-    div.card{
-        margin: 5px;
-        border: 1px solid #ece4e4;
-        width: 40wv;
-        height: auto;
-    }
-
-    div.card:hover {
-        border: 2px solid lightgray;
-    }
-    .card img{
-        width: 100%;
-        height: 240px;
-    }
-    div.card_content{
-        text-align: center;
-        padding: 5px;
-        position: relative;
-        height: 40wv;
-    }
-    hr{
-        border: none;
-        border-top: 2px solid lightgray;
-        margin-top: 10px;
-        margin-bottom: 5px;
-
-        
-    }
-    .card_title{
-        color: #0d349b;
-        font-size: large;
-        padding: 10px;
-        text-align: center
-
-    }
-    .card_footer{
-        color: black;
-        padding: 5px;
-        margin-left: 10%;
-      
-    }
-    input[type=button]{
-    border: 1px solid black;
-    font-weight: 5;
-    border-radius: 25px;
-    background-color: #ebdede;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 2px;
-    font-size: small;
-    width: 100px;
-    cursor: pointer;
-    padding:  5px 8px;
-    margin-left: 10%;
-    }
-    input[type="button"]:hover{
-    color: #fafafa;
-    background-color: #0d349b;
-    font-size: 16px;
-    width: 120px;
-    margin-left: 5%;
-}
-.card_content .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: auto;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #FEE3C8;
-  text-align: left ;
-  padding: 15px;
-  font-size: medium;
-}
-
-.card_content:hover .overlay {
-  opacity: 0.88;
-}
-</style>
+    
 <body>
+<div class="topnav">
+        <a  href="index.html">Home</a>
+        <a href="all.php" class="active">Courses</a>
+        <a href="contact.html">Contact</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="login.html">Login</a>
+        <a href="checkout.html" style="margin-left: 7%;  padding: 18px ; " >
+        <img src="images/shopping-cart_03.png" alt="" width="30" style="margin-top: 0px; ">
+        My Shopping Cart </a>
+</div>
     <!--Div container-->
     <div class="container">
 
@@ -218,7 +97,14 @@ $mysqli->close();
         </table>
     </div>
 
-    
+    <footer>
+    <small>
+      2024 Spring Semester - ENGR 372 - 
+    </small>
+    <small>
+        Melike Z. Tapcı, Resul Erdem Arduç, Ege Eylül Kırmızı, Maram Al-Maohgra
+    </small>
+  </footer>
 </body>
 </html>
 
