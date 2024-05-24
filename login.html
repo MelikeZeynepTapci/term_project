@@ -7,12 +7,11 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
-    <link rel="stylesheet" href="style.css">
 </head>
 <style>
   body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(90deg, #ede1fff5, #ffffff);
+    background: linear-gradient(90deg, #0d349b, #e99bc1);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -38,8 +37,6 @@
    height: auto;;
    border-radius: 10px;
    padding: 10px 40px 10px 0px ;
-   border: 1px solid silver;
-   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
    
  }
 
@@ -106,18 +103,53 @@ input[type="Submit"]:hover{
     background-color: #0d349b;
 }
 
+.topnav {
+  overflow: hidden;
+  background-color: linear-gradient(90deg, #0d349b, #e99bc1);
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 70px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: #0d349b;
+}
+
+.topnav a.active {
+  background-color: #ddd;
+  color: #fafafa;
+  
+}
+
+footer {
+  text-align: center;
+  padding: 5px;
+  background-color: #fbe3ce;
+  color: #000;
+  position: relative;
+  margin-top: 58%;
+}
+
 </style>
 <body>
+
     <div class="topnav">
-        <a class="active" href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
+        <a  href="index.html">Home</a>
+        <a href="all.php" >Courses</a>
         <a href="contact.html">Contact</a>
         <a href="aboutus.html">About Us</a>
-        <a href="login.html">Login</a>
-        <a href="checkout.html">My Shopping Cart</a>
-        <img src="images/shopping-cart.png" alt="" width="40" style="margin-top: 5px; ">
-      </div>
-
+        <a href="login.html"  class="active">Login</a>
+        <a href="checkout.html" style="margin-left: 7%;  padding: 18px ; " >
+        <img src="images/shopping-cart_03.png" alt="" width="30" style="margin-top: 0px; ">
+        My Shopping Cart </a>
+</div>
  
     <div class="div01" align="center">
         <h1>Login</h1>
@@ -148,6 +180,13 @@ input[type="Submit"]:hover{
         </form>
     </table>
 </div>
-    
+<footer>
+    <small>
+      2024 Spring Semester - ENGR 372 - 
+    </small>
+    <small>
+        Melike Z. Tapcı, Resul Erdem Arduç, Ege Eylül Kırmızı, Maram Al-Maohgra
+    </small>
+  </footer>
 </body>
 </html>
