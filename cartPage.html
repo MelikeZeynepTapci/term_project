@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <style>
       body {
@@ -39,10 +40,6 @@
         color: red;
         cursor: pointer;
       }
-      .cart-summary {
-        text-align: right;
-        margin-top: 20px;
-      }
       .total-price {
         color: green;
         font-size: 20px;
@@ -54,13 +51,31 @@
         padding: 10px 20px;
         text-align: center;
         display: inline-block;
-        margin-top: 20px;
         cursor: pointer;
         border: none;
+      }
+      .total-row td {
+        border: none;
+        font-weight: bold;
       }
     </style>
   </head>
   <body>
+    <div class="topnav">
+      <a class="active" href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="contact.html">Contact</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="login.html">Login</a>
+      <a href="checkout.html">Checkout Page</a>
+      <a href="cartPage.html">Shopping Cart</a>
+      <img
+        src="images/shopping-cart.png"
+        alt=""
+        width="40"
+        style="margin-top: 5px"
+      />
+    </div>
     <div class="cart-container">
       <h1>Shopping Cart</h1>
       <table>
@@ -91,11 +106,21 @@
             <td><i class="fas fa-trash remove-btn"></i></td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr class="total-row">
+            <td colspan="3"></td>
+            <td>Total: <span class="total-price">$55.00</span></td>
+            <td>
+              <button
+                class="checkout-btn"
+                onclick="location.href='checkout.html'"
+              >
+                Checkout
+              </button>
+            </td>
+          </tr>
+        </tfoot>
       </table>
-      <div class="cart-summary">
-        <span class="total-price">Total: $55.00</span>
-        <button class="checkout-btn">Checkout</button>
-      </div>
     </div>
 
     <script>
@@ -105,17 +130,15 @@
           const totalCell = row.querySelector(".item-total").innerText;
           const totalValue = parseFloat(totalCell.replace("$", ""));
           updateTotal(-totalValue);
-          row.remove(); // Removes the item row from the table
+          row.remove();
         });
       });
 
       function updateTotal(amount) {
         const totalSpan = document.querySelector(".total-price");
-        let currentTotal = parseFloat(
-          totalSpan.innerText.replace("Total: $", "")
-        );
+        let currentTotal = parseFloat(totalSpan.innerText.replace("$", ""));
         currentTotal += amount;
-        totalSpan.innerText = `Total: $${currentTotal.toFixed(2)}`;
+        totalSpan.innerText = `$${currentTotal.toFixed(2)}`;
       }
     </script>
   </body>
