@@ -25,7 +25,7 @@ $count = mysqli_num_rows($result);
 if($count > 0){  
     $_SESSION['logged']=1;
     //PLEASE CHANGE THIS TO MAIN PAGE CONTAINING THE LOGOUT
-    header("Location: main.php");}  
+    header("Location: index.html");}  
 else{  
     echo "<br> <br> <br> ","<h1> Login failed. Check your email or password.</h1>";  
 }     
