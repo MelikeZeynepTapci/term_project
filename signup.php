@@ -24,7 +24,7 @@ $phone=$_POST['txt_phone'];
 if ($password==$password_02){
     $sql = "INSERT INTO customers (name, surname, email, password, phone) VALUES ('$name', '$surename', '$email', '$password', '$phone');";
     if ($conn->query($sql) === TRUE) {
-    header('Location: welcome.php');
+    header('Location: login.html');
   } 
   else {
     echo "Error: " . $sql . "<br>" . $conn->error;
