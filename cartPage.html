@@ -11,10 +11,12 @@
     />
     <style>
       body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(90deg, #0d349b, #e99bc1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    letter-spacing: 1px;
+    font-size: 14px;
       }
       .cart-container {
         width: 80%;
@@ -22,6 +24,8 @@
         background: white;
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 10%;
+        margin-bottom: 25%;
       }
       table {
         width: 100%;
@@ -37,16 +41,16 @@
         background-color: #f9f9f9;
       }
       .remove-btn {
-        color: red;
+        color: #e99bc1;
         cursor: pointer;
       }
       .total-price {
-        color: green;
+        color:  #2a3172;
         font-size: 20px;
         font-weight: bold;
       }
       .checkout-btn {
-        background-color: #4caf50;
+        background-color: #2a3172;
         color: white;
         padding: 10px 20px;
         text-align: center;
@@ -76,9 +80,8 @@
         width="50"
         style="margin-top: 5px"
       />
-
-    </span>
-    </div>
+        
+</div>
     <div class="cart-container">
       <h1>Shopping Cart</h1>
       <table>
@@ -144,5 +147,13 @@
         totalSpan.innerText = `$${currentTotal.toFixed(2)}`;
       }
     </script>
+    <footer>
+      <small>
+        2024 Spring Semester - ENGR 372 - 
+      </small>
+      <small>
+          Melike Z. Tapcı, Resul Erdem Arduç, Ege Eylül Kırmızı, Maram Al-Maohgra
+      </small>
+    </footer>
   </body>
 </html>
