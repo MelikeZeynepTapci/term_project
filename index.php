@@ -17,8 +17,8 @@ session_start();
 <body>
 
 <div class="topnav">
-        <a  href="index.html">Home</a>
-        <a href="all.php" class="active">Courses</a>
+        <a  class="active" href="index.php">Home</a>
+        <a href="all.php" >Courses</a>
         <a href="contact.html">Contact</a>
         <a href="aboutus.html">About Us</a>
         <a href=
