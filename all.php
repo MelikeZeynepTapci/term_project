@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Connect with DB
 $servername = "localhost";
 $username = "root";
@@ -31,8 +32,44 @@ $mysqli->close();
     <title> Courses </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='coursesGall_styles.css'>
-    <script src='main.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    
+    <script>
+        function add_to_cart(prod_id){
+            var date = new Date();
+            date.setTime(date.getTime() + (60*60*1000));
+            var cValue= Cookies.get('prod_ids');
+            //Check if cookie is there
+            if (cValue == undefined){
+                console. log( 'Cookie array created' );
+                //Create ids array, add it to cookie
+                var p_ids=[prod_id];
+                Cookies.set('prod_ids', JSON.stringify(p_ids), { expires: date });
+                console. log( "Prod id: ", prod_id ," added");
+            }
+            else{
+                console. log( 'Cookie array exsist' );
+                //Get the array
+                var p_ids= $.parseJSON(Cookies.get('prod_ids'));
+                p_ids.push(prod_id);
+                Cookies.set('prod_ids', JSON.stringify(p_ids), {  expires: date });
+                console. log( 'Id added' );
+            }
+            cValue= JSON.parse(Cookies.get('prod_ids'));
+            console. log( "Products id: ", cValue);
+
+        }
+
+        function check_login() {
+            alert("You need to login first! ");
+            window.location.href= "login.html";
+        }
+        
+ 
+    </script>
 </head>
+
 <body>
 
 <div class="topnav">
@@ -40,14 +77,29 @@ $mysqli->close();
         <a href="all.php" class="active">Courses</a>
         <a href="contact.html">Contact</a>
         <a href="aboutus.html">About Us</a>
-        <a href="login.html">Login</a>
-        <a href="checkout.html" style="margin-left: 7%;  padding: 18px ; " >
+        <a href=
+        <?php 
+        if ($_SESSION['logged']==1){
+           echo "logout.php";
+        }
+        else{
+            echo "login.html";
+        }
+        ?>
+        >
+        <?php 
+        if ($_SESSION['logged']==1){
+           echo "Logout";
+        }
+        else{
+            echo "Login";
+        }
+        ?>
+    </a>
+        <a href="cartPage.html" style="margin-left: 7%;  padding: 18px ; " >
         <img src="images/shopping-cart_03.png" alt="" width="30" style="margin-top: 0px; ">
         My Shopping Cart </a>
-</div>
-
-        
-     
+</div>     
     <!--Div container-->
     <div class="container">
 
@@ -82,7 +134,18 @@ $mysqli->close();
                     
                         <hr>
                         <div class="card_footer">Price:  <?php echo $rows['price'] ?>  
-                            <input type="button" value="add to cart">
+                        <input type="button" value="add to cart" name="btn_add_to_cart" id= <?php echo $rows['product_id'] ?> onclick=
+                        <?php 
+                        if ($_SESSION['logged']==1){
+                            echo  "add_to_cart(this.id)" ;
+                        }
+                        else{
+                           echo "check_login()";
+                        }
+                        ?>
+                       
+                        
+                        >
                         </div>
                     </div>
                 </td>
@@ -94,7 +157,6 @@ $mysqli->close();
                 $i++;
                 }
             ?>
-                
            
         </table>
     </div>
